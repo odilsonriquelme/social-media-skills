@@ -1,0 +1,69 @@
+REPOSITÓRIO: social-media-skills
+TIPO: Fork Público (espelho do upstream, branch main)
+LINGUAGEM: Markdown (skills) + Shell
+URL (seu fork):    https://github.com/odilsonriquelme/social-media-skills
+UPSTREAM (fork de): https://github.com/charlie947/social-media-skills (autor: Charlie Hills)
+
+DESCRIÇÃO
+---------
+Conjunto completo de Claude Skills por trás do sistema de conteúdo do Charlie Hills
+(350k+ seguidores em LinkedIn, Instagram, Substack, X e YouTube; 100M+ views/ano).
+Skills são arquivos markdown que dão ao agente conhecimento e workflows especializados:
+quando você trabalha numa tarefa de redes sociais, o Claude reconhece e aplica os padrões,
+regras de voz e restrições de cada plataforma. Instaláveis via marketplace de plugins.
+
+ARQUITETURA IMPORTANTE (skills em CASCATA)
+-------------------------------------------
+As skills NÃO são independentes — leem um contexto compartilhado, em hierarquia:
+   1. voice-builder  → FUNDAÇÃO. Gera about-me.md + voice.md (lidos por TODAS as outras)
+   2. newsletter-voice → a FONTE de onde todo conteúdo nasce (newsletter primeiro)
+   3. as demais skills → derivam dessa base para cada formato/plataforma
+Ou seja: o sistema começa na newsletter e flui para todos os outros canais.
+
+AS 17 SKILLS (skills/)
+----------------------
+FUNDAÇÃO / VOZ:
+   voice-builder      → define a voz/identidade verbal (base de tudo)
+   newsletter-voice   → escreve a newsletter (fonte de todo o resto)
+   niche-research     → pesquisa de nicho e tendências
+
+ESCRITA / POSTS:
+   post-writer        → escreve posts
+   post-formatter     → formata posts para a plataforma
+   post-scorer        → avalia/dá nota ao post antes de publicar
+   hook-generator     → gera hooks (ganchos de abertura)
+   quote-post         → posts de citação
+   pinned-comment     → comentário fixado (LinkedIn) + prompts de imagem
+   content-matrix     → matriz de conteúdo (planejamento multi-formato)
+
+VÍDEO / VISUAL:
+   reels-scripting    → roteiros de Reels / vídeos curtos
+   youtube-thumbnail  → thumbnails de YouTube
+   graphic-designer   → design gráfico de peças
+   gemini-carousel    → carrosséis usando Gemini
+   gemini-infographic → infográficos usando Gemini
+
+PERFIL / DADOS:
+   profile-optimizer  → otimização de perfil/bio nas redes
+   analytics-dashboard→ painel de métricas/analytics
+
+OUTROS ARQUIVOS
+---------------
+README.md        → documentação (com diagrama da cascata de skills). De terceiros — não editar.
+VERSIONS.md      → histórico de versões das skills (atualmente 17 skills)
+validate-skills.sh → valida se os SKILL.md estão corretos antes de usar
+assets/          → banner e imagens
+CONTRIBUTING.md  → como contribuir
+
+RELEVÂNCIA PESSOAL
+------------------
+Relevante para seus projetos de conteúdo ([CONT] Explorando IA, Zero Narrativa,
+Ape Bitcoiner News, Explorando Provérbios). Várias destas skills (gemini-carousel,
+gemini-infographic, quote-post, reels-scripting, etc.) aparecem disponíveis no seu
+Claude Code e podem apoiar a produção desses canais.
+
+OBSERVAÇÃO (fork)
+-----------------
+Fork espelho do upstream charlie947/social-media-skills. README/skills são de terceiros —
+não editar. Push deste repo vai só para o SEU fork. Para atualizar, sincronizar com o
+upstream (git pull upstream main).
